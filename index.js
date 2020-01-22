@@ -18,7 +18,7 @@ const init = async () => {
 
   // Loads the Power Cards
   console.log(`\n### Attempting to load Power Cards`);
-  const { data } = await fetch(client.config.powerCardsUrl).then(response => response.json());
+  const { data } = await fetch(process.env.URL_POWER_CARDS).then(response => response.json());
   client.powerCards = data;
 
 
@@ -51,7 +51,7 @@ const init = async () => {
 
 
   // Here we login the client.
-  client.login(client.config.token);
+  client.login(process.env.BOT_TOKEN);
 
   // End top-level async/await function.
 };
