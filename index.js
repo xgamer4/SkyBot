@@ -21,6 +21,7 @@ client.config = require("./config.js");
 
 // Overrides the Process Env if necessary
 if (!process.env.BOT_TOKEN) process.env.BOT_TOKEN = client.config.token;
+if (!process.env.DEF_PREFIX) process.env.DEF_PREFIX = client.config.defaultSettings.prefix;
 if (!process.env.URL_POWER_CARDS) process.env.URL_POWER_CARDS = client.config.URLs.powerCards;
 if (!process.env.URL_HEROES) process.env.URL_HEROES = client.config.URLs.heroes;
 
