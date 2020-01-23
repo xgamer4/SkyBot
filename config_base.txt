@@ -1,0 +1,18 @@
+const config = {
+
+  // Your Bot's Token. Available on https://discordapp.com/developers/applications/me
+  "token": {{token}},
+
+  // Default per-server settings.  
+  "defaultSettings" : {
+    "prefix": "!",
+  },
+
+  // URLs DEFINITIONS.
+  "URLs": {
+    "powerCards": {{URL_PowerCards}},
+    "heroes": {{URL_Heroes}}
+  }
+};
+
+module.exports = config;

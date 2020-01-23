@@ -1,15 +1,19 @@
 # SkyBot
 Skytear Discord Bot
 
+### Usage
+First time only:
+- Run `npm install`
+- Run `node setup.js` to generate a proper configuration file and settings.
+
+To start the Bot:
+- `node index.js`
+
 ### Config
-To use the Bot, add the configuration in `config.json`:
+`setup.js` generates the needed configuration file (`config.js`). It will contain:
 - `token` - Discord Bot token
 - `prefix` - Message Prefix to activate the Bot
-- `powerCardsUrl` - Skytear JSON URL for Power Cards
-
-### Usage
-- `npm install`
-- `node index.js`
+- `URLs` - Skytear JSON Rest URLs
 
 ### Known Issues
 - `Discord.js` SKD not working under HTTP proxy.
