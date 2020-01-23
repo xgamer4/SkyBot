@@ -10,7 +10,7 @@ const config = {
 
   // URLs DEFINITIONS.
   "URLs": {
-    "powerCards": {{URL_PowerCards}},
+    "powers": {{URL_Powers}},
     "heroes": {{URL_Heroes}}
   }
 };

@@ -12,7 +12,7 @@ let prompts = [
   },
   {
     type: "input",
-    name: "URL_PowerCards",
+    name: "URL_Powers",
     message: "Please enter the Power Cards REST URL"
   },
   {
@@ -29,7 +29,7 @@ let prompts = [
 
   baseConfig = baseConfig
         .replace("{{token}}", `"${answers.token}"`)
-        .replace("{{URL_PowerCards}}", `"${answers.URL_PowerCards}"`)
+        .replace("{{URL_Powers}}", `"${answers.URL_Powers}"`)
         .replace("{{URL_Heroes}}", `"${answers.URL_Heroes}"`);
 
   fs.writeFileSync("./config.js", baseConfig);

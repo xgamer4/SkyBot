@@ -10,19 +10,19 @@ const fetch = require('node-fetch');
 const client = new Discord.Client();
 
 try {
-// Here we load the config file that contains our token and our prefix values.
-client.config = require("./config.js");
-// client.config.token contains the bot's token
-// client.config.prefix contains the message prefix
-// client.config.URLs contains the Skytear REST URLs
+  // Here we load the config file that contains our token and our prefix values.
+  client.config = require("./config.js");
+  // client.config.token contains the bot's token
+  // client.config.prefix contains the message prefix
+  // client.config.URLs contains the Skytear REST URLs
 } catch(e) {
   console.log('config.js not defined, hope the config is pushed in process.env')
 }
 
 // Overrides the Process Env if necessary
-if (!process.env.BOT_TOKEN) process.env.BOT_TOKEN = client.config.token;
+if (!process.env.BOT_TOKEN)  process.env.BOT_TOKEN  = client.config.token;
 if (!process.env.DEF_PREFIX) process.env.DEF_PREFIX = client.config.defaultSettings.prefix;
-if (!process.env.URL_POWER_CARDS) process.env.URL_POWER_CARDS = client.config.URLs.powerCards;
+if (!process.env.URL_POWERS) process.env.URL_POWERS = client.config.URLs.powers;
 if (!process.env.URL_HEROES) process.env.URL_HEROES = client.config.URLs.heroes;
 
 
@@ -34,8 +34,8 @@ if (!process.env.URL_HEROES) process.env.URL_HEROES = client.config.URLs.heroes;
 const loadPowerCards = async () => {
   // Loads the Power Cards
   console.log(`\n### Attempting to load Power Cards`);
-  const { data } = await fetch(process.env.URL_POWER_CARDS).then(response => response.json());
-  client.powerCards = data;
+  const { data } = await fetch(process.env.URL_POWERS).then(response => response.json());
+  client.powers = data;
 };
 
 const loadHeroes = async () => {
@@ -43,6 +43,12 @@ const loadHeroes = async () => {
   console.log(`\n### Attempting to load Heroes`);
   const { data } = await fetch(process.env.URL_HEROES).then(response => response.json());
   client.heroes = data;
+  
+  // Loads the Ultimates
+  client.ultimates = new Array();
+  data.forEach(element => {
+    client.ultimates.push(element.ultimateCard);
+  });
 };
 
 const init = async () => {

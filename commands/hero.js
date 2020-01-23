@@ -16,8 +16,7 @@ exports.run = (client, message, args) => {
 
     // Basic embed visualization
     const embed = new Discord.RichEmbed()
-        .attachFile(result.heroCard.frontImage.low)
-        .setImage(result.ultimateCard.frontImage.low);;
+        .setImage(result.heroCard.frontImage.low);
 
     message.channel.send({ embed });
     

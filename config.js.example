@@ -10,7 +10,7 @@ const config = {
 
   // URLs DEFINITIONS.
   "URLs": {
-    "powerCards": "https://www.somesite.com/somefile.json",
+    "powers": "https://www.somesite.com/somefile.json",
     "heroes": "https://www.somesite.com/somefile.json"
   }
 };
