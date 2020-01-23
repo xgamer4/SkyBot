@@ -4,10 +4,17 @@ exports.run = (client, message, args) => {
     // Extract the search string
     let cardToFind = args.join(" ");
 
-    // Search the card in the array
-    var result = client.powerCards.find(item => {
+    // Search the card in the powers
+    var result = client.powers.find(item => {
         return item.title.toLowerCase().includes(cardToFind.toLowerCase());
     })
+	
+	if (result == null) {
+        // Search the card in the ultimates
+        result = client.ultimates.find(item => {
+          return item.title.toLowerCase().includes(cardToFind.toLowerCase());
+      })
+    }
 
     if (result == null) {
         // Error, card not found
