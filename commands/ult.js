@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
 	if (result != null) {
 		// Basic embed visualization
         const embed = new Discord.RichEmbed()
-            .setImage(result.heroCard.ultimateCard.frontImage.low);
+            .setImage(result.ultimateCard.frontImage.low);
 
         message.channel.send({ embed });
 		
