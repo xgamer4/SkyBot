@@ -11,7 +11,8 @@ const config = {
   // URLs DEFINITIONS.
   "URLs": {
     "powers": "https://www.somesite.com/somefile.json",
-    "heroes": "https://www.somesite.com/somefile.json"
+    "heroes": "https://www.somesite.com/somefile.json",
+    "faq": "https://www.somesite.com/somefile.json"
   }
 };
 
