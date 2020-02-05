@@ -24,6 +24,7 @@ if (!process.env.BOT_TOKEN)  process.env.BOT_TOKEN  = client.config.token;
 if (!process.env.DEF_PREFIX) process.env.DEF_PREFIX = client.config.defaultSettings.prefix;
 if (!process.env.URL_POWERS) process.env.URL_POWERS = client.config.URLs.powers;
 if (!process.env.URL_HEROES) process.env.URL_HEROES = client.config.URLs.heroes;
+if (!process.env.URL_FAQ) process.env.URL_FAQ = client.config.URLs.faq;
 
 
 
@@ -51,12 +52,56 @@ const loadHeroes = async () => {
   });
 };
 
+const loadFAQ = async () => {
+  // Loads the FAQ
+  console.log(`\n### Attempting to load FAQ`);
+  const { data } = await fetch(process.env.URL_FAQ).then(response => response.json());
+  client.faq = data;
+
+  // Parse through FAQ to create indexes by hero ID and Power Card ID for easy references
+  let indexByHeroes = {};
+  let indexByPowerCards = {};
+
+  data.forEach(qa => {
+    if (qa.relatedHeroes)
+    {
+      qa.relatedHeroes.forEach(h => {
+        if (!indexByHeroes.hasOwnProperty(h))
+        {
+          indexByHeroes[h] = [];
+        }
+        indexByHeroes[h].push(qa);
+      });
+    }
+
+    if (qa.relatedPowerCards)
+    {
+      qa.relatedPowerCards.forEach(p => {
+        if (!indexByPowerCards.hasOwnProperty(p))
+        {
+          indexByPowerCards[p] = [];
+        }
+        indexByPowerCards[p].push(qa);
+      });
+    }
+  });
+
+  client.faqByHeroes = indexByHeroes;
+  client.faqByPowerCards = indexByPowerCards;
+
+  
+}
+
 const init = async () => {
 
   // Loads Cards
-  loadPowerCards();
-  loadHeroes();
+  const restCalls = [
+    loadPowerCards(),
+    loadHeroes(),
+    loadFAQ(),
+  ];
 
+  
 
   // Events
   console.log(`\n### Attempting to load Events`);
@@ -85,9 +130,15 @@ const init = async () => {
     });
   });
 
+  Promise.all(restCalls)
+    .then(() => client.login(process.env.BOT_TOKEN))
+    .catch(() => { 
+      console.log("At least one REST call failed to populate. Closing bot."); 
+      process.exit();
+    });
 
   // Here we login the client.
-  client.login(process.env.BOT_TOKEN);
+  //client.login(process.env.BOT_TOKEN);
 
   // End top-level async/await function.
 };
