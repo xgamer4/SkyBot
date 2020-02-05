@@ -22,8 +22,16 @@ exports.run = (client, message, args) => {
     }
 
     // Basic embed visualization
-    const embed = new Discord.RichEmbed()
-        .setImage(result.frontImage.low);
+    const embed = new Discord.RichEmbed();
+        
+
+    client.faqByPowerCards[result.id].forEach(qa => {
+        const question = qa.title.replace(/<p>/g, "").replace(/<\/p>/g, "");
+        const answer = qa.body.replace(/<p>/g, "").replace(/<\/p>/g, "");
+        embed.addField(question, answer, false);
+    });
+
+    embed.setImage(result.frontImage.low);
 
     message.channel.send({ embed });
 }

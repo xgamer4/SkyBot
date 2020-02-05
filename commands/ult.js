@@ -14,6 +14,12 @@ exports.run = (client, message, args) => {
         const embed = new Discord.RichEmbed()
             .setImage(result.ultimateCard.frontImage.low);
 
+            client.faqByPowerCards[result.id].forEach(qa => {
+                const question = qa.title.replace(/<p>/g, "").replace(/<\/p>/g, "");
+                const answer = qa.body.replace(/<p>/g, "").replace(/<\/p>/g, "");
+                embed.addField(question, answer, false);
+            });
+
         message.channel.send({ embed });
 		
 		return;
