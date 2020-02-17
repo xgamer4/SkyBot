@@ -20,6 +20,11 @@ let prompts = [
     name: "URL_Heroes",
     message: "Please enter the Heroes REST URL"
   },
+  {
+    type: "input",
+    name: "URL_FAQ",
+    message: "Please enter the FAQ REST URL"
+  },
 ];
 
 (async function () {
@@ -30,7 +35,8 @@ let prompts = [
   baseConfig = baseConfig
         .replace("{{token}}", `"${answers.token}"`)
         .replace("{{URL_Powers}}", `"${answers.URL_Powers}"`)
-        .replace("{{URL_Heroes}}", `"${answers.URL_Heroes}"`);
+        .replace("{{URL_Heroes}}", `"${answers.URL_Heroes}"`)
+        .replace("{{URL_FAQ}}", `"${answers.URL_FAQ}"`);
 
   fs.writeFileSync("./config.js", baseConfig);
   console.log("REMEMBER TO NEVER SHARE YOUR TOKEN WITH ANYONE!");
