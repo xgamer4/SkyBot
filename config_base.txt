@@ -11,7 +11,9 @@ const config = {
   // URLs DEFINITIONS.
   "URLs": {
     "powers": {{URL_Powers}},
-    "heroes": {{URL_Heroes}}
+    "heroes": {{URL_Heroes}},
+    "faq": {{URL_FAQ}}
+
   }
 };
 
