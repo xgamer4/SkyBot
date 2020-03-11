@@ -25,6 +25,8 @@ if (!process.env.DEF_PREFIX) process.env.DEF_PREFIX = client.config.defaultSetti
 if (!process.env.URL_POWERS) process.env.URL_POWERS = client.config.URLs.powers;
 if (!process.env.URL_HEROES) process.env.URL_HEROES = client.config.URLs.heroes;
 if (!process.env.URL_FAQ) process.env.URL_FAQ = client.config.URLs.faq;
+if (!process.env.URL_VICTORY) process.env.URL_VICTORY = client.config.URLs.victory;
+if (!process.env.URL_OUTSIDERS) process.env.URL_OUTSIDERS = client.config.URLs.outsiders;
 
 
 
@@ -58,9 +60,11 @@ const loadFAQ = async () => {
   const { data } = await fetch(process.env.URL_FAQ).then(response => response.json());
   client.faq = data;
 
-  // Parse through FAQ to create indexes by hero ID and Power Card ID for easy references
+  // Parse through FAQ to create indexes by Hero/Power/Victory/Outsider ID for easy references
   let indexByHeroes = {};
   let indexByPowerCards = {};
+  let indexByVictoryCards = {};
+  let indexByOutsiders = {};
 
   data.forEach(qa => {
     if (qa.relatedHeroes)
@@ -84,13 +88,50 @@ const loadFAQ = async () => {
         indexByPowerCards[p].push(qa);
       });
     }
+
+    if (qa.relatedVictoryCards)
+    {
+      qa.relatedVictoryCards.forEach(p => {
+        if (!indexByVictoryCards.hasOwnProperty(p))
+        {
+          indexByVictoryCards[p] = [];
+        }
+        indexByVictoryCards[p].push(qa);
+      });
+    }
+
+    if (qa.relatedOutsiders)
+    {
+      qa.relatedOutsiders.forEach(p => {
+        if (!indexByOutsiders.hasOwnProperty(p))
+        {
+          indexByOutsiders[p] = [];
+        }
+        indexByOutsiders[p].push(qa);
+      });
+    }
   });
 
   client.faqByHeroes = indexByHeroes;
   client.faqByPowerCards = indexByPowerCards;
-
-  
+  client.faqByVictoryCards = indexByVictoryCards;
+  client.faqByOutsiders = indexByOutsiders;
 }
+
+const loadVictoryCards = async () => {
+  // Loads the Victory Cards
+  console.log(`\n### Attempting to load Victory Cards`);
+  const { data } = await fetch(process.env.URL_VICTORY).then(response => response.json());
+  client.victory = data;
+};
+
+const loadOutsiders = async () => {
+  // Loads the Outsiders Cards
+  console.log(`\n### Attempting to load Outsiders Cards`);
+  const { data } = await fetch(process.env.URL_OUTSIDERS).then(response => response.json());
+  client.outsiders = data;
+};
+
 
 const init = async () => {
 
@@ -99,6 +140,8 @@ const init = async () => {
     loadPowerCards(),
     loadHeroes(),
     loadFAQ(),
+    loadVictoryCards(),
+    loadOutsiders(),
   ];
 
   

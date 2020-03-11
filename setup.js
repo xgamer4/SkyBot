@@ -25,6 +25,16 @@ let prompts = [
     name: "URL_FAQ",
     message: "Please enter the FAQ REST URL"
   },
+  {
+    type: "input",
+    name: "URL_Victory",
+    message: "Please enter the Victory Cards REST URL"
+  },
+  {
+    type: "input",
+    name: "URL_Outsiders",
+    message: "Please enter the Outsiders REST URL"
+  },
 ];
 
 (async function () {
@@ -36,7 +46,9 @@ let prompts = [
         .replace("{{token}}", `"${answers.token}"`)
         .replace("{{URL_Powers}}", `"${answers.URL_Powers}"`)
         .replace("{{URL_Heroes}}", `"${answers.URL_Heroes}"`)
-        .replace("{{URL_FAQ}}", `"${answers.URL_FAQ}"`);
+        .replace("{{URL_FAQ}}", `"${answers.URL_FAQ}"`)
+        .replace("{{URL_Victory}}", `"${answers.URL_Victory}"`)
+        .replace("{{URL_Outsiders}}", `"${answers.URL_Outsiders}"`);
 
   fs.writeFileSync("./config.js", baseConfig);
   console.log("REMEMBER TO NEVER SHARE YOUR TOKEN WITH ANYONE!");

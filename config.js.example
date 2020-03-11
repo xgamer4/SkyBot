@@ -12,7 +12,9 @@ const config = {
   "URLs": {
     "powers": "https://www.somesite.com/somefile.json",
     "heroes": "https://www.somesite.com/somefile.json",
-    "faq": "https://www.somesite.com/somefile.json"
+    "faq": "https://www.somesite.com/somefile.json",
+    "victory": "https://www.somesite.com/somefile.json",
+    "outsiders": "https://www.somesite.com/somefile.json"
   }
 };
 
