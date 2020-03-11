@@ -12,8 +12,9 @@ const config = {
   "URLs": {
     "powers": {{URL_Powers}},
     "heroes": {{URL_Heroes}},
-    "faq": {{URL_FAQ}}
-
+    "faq": {{URL_FAQ}},
+    "victory": {{URL_Victory}},
+    "outsiders": {{URL_Outsiders}}
   }
 };
 
