@@ -1,4 +1,5 @@
-const Discord = require("discord.js");
+const Helpers = require("../common/helpers.js");
+
 
 exports.run = (client, message, args) => {
     // Extract the search string
@@ -10,20 +11,11 @@ exports.run = (client, message, args) => {
     })
 	
 	if (result != null) {
-		// Basic embed visualization
-        const embed = new Discord.RichEmbed()
-            .setImage(result.ultimateCard.frontImage.low);
 
-        if (client.faqByPowerCards[result.id]) {
-            client.faqByPowerCards[result.id].forEach(qa => {
-                const question = qa.title.replace(/<p>/g, "").replace(/<\/p>/g, "");
-                const answer = qa.body.replace(/<p>/g, "").replace(/<\/p>/g, "");
-                embed.addField(question, answer, false);
-            });
-        }
+        // Show Image and FAQ
+        Helpers.sendEmbed_CardImage(message, result.ultimateCard.frontImage.low)
+            .then(Helpers.sendEmbed_CardFAQ(message, client.faqByPowerCards, result.ultimateCard.id));
 
-        message.channel.send({ embed });
-		
 		return;
 	}
 
@@ -39,9 +31,7 @@ exports.run = (client, message, args) => {
         return message.channel.send(`No results found for **${args.join(' ')}**.`);
     }
 
-    // Basic embed visualization
-    const embed = new Discord.RichEmbed()
-        .setImage(result.frontImage.low);
-
-    message.channel.send({ embed });
+    // Show Image and FAQ
+    Helpers.sendEmbed_CardImage(message, result.frontImage.low)
+        .then(Helpers.sendEmbed_CardFAQ(message, client.faqByPowerCards, result.id));
 }

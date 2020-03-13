@@ -1,4 +1,5 @@
-const Discord = require("discord.js");
+const Helpers = require("../common/helpers.js");
+
 
 exports.run = (client, message, args) => {
     // Extract the search string
@@ -21,20 +22,6 @@ exports.run = (client, message, args) => {
         return message.channel.send(`No results found for **${args.join(' ')}**.`);
     }
 
-    // Basic embed visualization
-    const embed = new Discord.RichEmbed()
-        .setImage(result.frontImage.low);
-        
-
-    if (client.faqByPowerCards[result.id]) {
-        client.faqByPowerCards[result.id].forEach(qa => {
-            const question = qa.title.replace(/<p>/g, "").replace(/<\/p>/g, "");
-            const answer = qa.body.replace(/<p>/g, "").replace(/<\/p>/g, "");
-            embed.addField(question, answer, false);
-        });
-    }
-
-
-
-    message.channel.send({ embed });
+    Helpers.sendEmbed_CardImage(message, result.frontImage.low)
+        .then(Helpers.sendEmbed_CardFAQ(message, client.faqByPowerCards, result.id));
 }
