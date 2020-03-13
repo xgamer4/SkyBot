@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+const Helpers = require("../common/helpers.js");
+
 
 exports.run = (client, message, args) => {
 
@@ -18,6 +20,7 @@ exports.run = (client, message, args) => {
         return message.channel.send({ embed });
     }
 
+
     // Extract the search string
     let victoryToFind = args.join(" ");
 
@@ -31,17 +34,7 @@ exports.run = (client, message, args) => {
         return message.channel.send(`No results found for **${args.join(' ')}**.`);
     }
 
-    // Basic embed visualization
-    const embed = new Discord.RichEmbed()
-        .setImage(result.frontImage.low);
-
-    if (client.faqByVictoryCards[result.id]) {
-        client.faqByVictoryCards[result.id].forEach(qa => {
-            const question = qa.title.replace(/<p>/g, "").replace(/<\/p>/g, "");
-            const answer = qa.body.replace(/<p>/g, "").replace(/<\/p>/g, "");
-            embed.addField(question, answer, false);
-        });
-    }
-
-    message.channel.send({ embed });
+    // Show Image and FAQ
+    Helpers.sendEmbed_CardImage(message, result.frontImage.low)
+        .then(Helpers.sendEmbed_CardFAQ(message, client.faqByVictoryCards, result.id));
 }
