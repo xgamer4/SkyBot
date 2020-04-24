@@ -18,6 +18,8 @@ exports.run = (client, message, args) => {
 
     .addField("**!outsider <outsider name>**", "Shows the Outsider Card image.\nWithout params shows the Outsiders list.")
 
+    .addField("**!rule <rule name>**", "Shows the Rule text.\nWithout params shows the Rule list.")
+
     .setFooter("SkyBot")
 
   message.channel.send({ embed });

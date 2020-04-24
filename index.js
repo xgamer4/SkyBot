@@ -4,6 +4,7 @@ const Discord = require("discord.js");
 const Enmap = require("enmap");
 const fs = require("fs");
 const fetch = require('node-fetch');
+const path = require("path");
 
 
 // This is your client.
@@ -27,6 +28,8 @@ if (!process.env.URL_HEROES) process.env.URL_HEROES = client.config.URLs.heroes;
 if (!process.env.URL_FAQ) process.env.URL_FAQ = client.config.URLs.faq;
 if (!process.env.URL_VICTORY) process.env.URL_VICTORY = client.config.URLs.victory;
 if (!process.env.URL_OUTSIDERS) process.env.URL_OUTSIDERS = client.config.URLs.outsiders;
+if (!process.env.URL_RULES) process.env.URL_RULES = client.config.URLs.rules;
+
 
 
 
@@ -132,6 +135,14 @@ const loadOutsiders = async () => {
   client.outsiders = data;
 };
 
+const loadRules = async () => {
+  // Loads the Rules
+  console.log(`\n### Attempting to load Rules`);
+  const { data } = JSON.parse(fs.readFileSync(path.resolve(__dirname, "./rules.json"), 'utf8'));
+  client.rules = data;
+};
+
+
 
 const init = async () => {
 
@@ -142,6 +153,7 @@ const init = async () => {
     loadFAQ(),
     loadVictoryCards(),
     loadOutsiders(),
+    loadRules()
   ];
 
   
@@ -180,10 +192,13 @@ const init = async () => {
       process.exit();
     });
 
+ 
+
   // Here we login the client.
   //client.login(process.env.BOT_TOKEN);
 
   // End top-level async/await function.
+
 };
 
 init();

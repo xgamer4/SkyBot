@@ -1,0 +1,58 @@
+{"data":[
+	{
+		"rule_name": "battlefield",
+		"rule_text": "**BATTLE FIELDS** have two different kinds of areas:\n\n> Lanes connecting players’ Towers, which protect the Nexus.\n> Domes of Skytear energy with monsters known as outsiders dwelling inside.\n\nA game usually lasts three to five turns, each consisting of a Heroes Phase and a Minions Phase."
+	},
+	{
+		"rule_name": "heroes phase",
+		"rule_text": "Whenever a hero is activated, that hero gets three Action Points(AP), each of which may be used to take one of the following actions: Move, Lead, Attack, Skirmish, or Worship.\n\n**IMPORTANT**\nA hero cannot take the same action twice during the same activation.\n\nPlayers may use the action token to track how many AP they have spent with the hero being activated.\n\nWhen the active player passes, the Activation is over: change the hero’s state from Ready to Exhausted.\n\n**OFTEN OVERLOOKED**\nYou cannot activate the same hero twice during the same Heroes Phase.\nYou and your opponent take turns activating one hero each.\nIf some heroes are Defeated, it is possible that a player is taking more than one activation in a row.\nThe first player always take the first activation each turn."
+	},
+	{
+		"rule_name": "minions phase",
+		"rule_text": "In this phase, players check who is winning the lead of each control token on the battlefield.\nControl tokens are numbered and must be checked in order from lowest to highest.\n\n**For each control token in the LANES:**\n1. Determine the winner, if any.\n2. Winner damages minions and Towers.\n3. Winner advances the control token.\n4. Both players spawn minions.\n\n**For each control token in the DOMES:**\n1. Determine the winner, if any.\n2. Winner activates the outsider.\n\n<See *Determine the Winner*, *Winner Applies the Damage*, *Advance the Control Token*, and *Winner activates the Outsider*>"
+	},
+	{
+		"rule_name": "determine the winner",
+		"rule_text": "Each friendly hero and minion who has LoS to the control token provides +1 Control, determining the base Control Value. Then, each player:\n\n1. Reveals each Lead card under friendly heroes with LoS to the Control token (usually placed with the Lead action).\n2. Select at most one of these cards to increase the base Control Value by the mana cost of the Lead card.\n\n**OFTEN OVERLOOKED**\nYou increase the Control Value by the MANA COST of the Lead card, NOT its modifier. You can choose AT MOST one Lead card per control token per player."
+	},
+	{
+		"rule_name": "winner applies the damage",
+		"rule_text": "In the Lanes, the winning player applies damage equal to the difference in Control Values as follows:\n\n1. Distribute the damage to enemy minions first.\n2. If and when there are no enemy minions left, apply the remaining damage to an enemy Tower or Nexus within 3 hexes from the control token.\n\n**Damaging Towers and Nexuses**When a player deals one or more damage to an enemy Tower or Nexus, that players draws one power card.\nWhen a Tower is reduced to 0 or fewer HP, that Tower is destroyed. When the first Tower belonging to a player is destroyed, place 5 tower tokens on that player’s Nexus. From now on, that player’s Nexus can be damaged as well. A player that destroys a Nexus immediately wins the game.\n\n**OFTEN OVERLOOKED**\nYou can only damage Towers and Nexuses within 3 hexes from the control token. When you damage a Tower, you draw 1 power card no matter the amount of damage dealt."
+	},
+	{
+		"rule_name": "advance the control token",
+		"rule_text": "The winner advances the control token a number of hexes equal to the difference between the Control Values. The control token must be moved directly toward the closest enemy tower token and it stops as soon as it is adjacent to one. The control token ignores Blocking Elements while moving and can end its movement in the same hex as another miniature or token, but cannot enter Domes.\n\nAfter the control token has been moved, the players reposition their existing minions on this Lane, starting from the winner.\n\n**Rules for Placing Minions**\nMinions must be repositioned, or spawn, as close as possible to the control token and with LoS to it (even two or more hexes away, if that is as close as possible).\nA friendly minion can share a hex with one enemy minion and cannot be placed inside Domes."
+	},
+	{
+		"rule_name": "both players spawn minions",
+		"rule_text": "1. The winner spawns up to two of their minions\n2. Then, the loser spawns up to two of their own.\n\nIn case of a tie, the second player places first.\nPlayers without a Tower in the Lane do not spawn minions."
+	},
+	{
+		"rule_name": "winner activates the outsider",
+		"rule_text": "The winner of the lead of a control token in a DOME:\n1. Place the outsider following the placement rule written on its card.\n2. Activates the outsider by spending up to 3 Action Points using Move, Skirmish, Attack action, or the outsider skills. Each action or skill costs 1 Action Point and cannot be taken more than once.\n\nOnce the activation is over, leave the outsider where it is.\n\n**OFTEN OVERLOOKED**\nHeroes cannot play power cards during the Minions Phase."
+	},
+	{
+		"rule_name": "end of turn",
+		"rule_text": "The Minions Phase ends with some upkeep activities where all players:\n1. Discard all power cards from their hero cards.\n2. Draw two new power cards.\n3. Discard cards from their hands until they are **BELOW 7 CARDS**.\n4. Ready all Exhausted heroes.\n5. Increase the mana counter and finally spawn Defeated heroes."
+	},
+	{
+		"rule_name": "object of the Game",
+		"rule_text": "The primary goal of Skytear is to destroy the enemy Nexus. Some  battlefields also have additional **VICTORY CARDS** that are randomly drawn at the beginning of the game. As soon as a player destroys the enemy Nexus or completes the condition on one or more victory cards, that player immediately wins the game.\n\nIf multiple players complete the condition on one or more victory cards simultaneously, the game is a draw.\n\nIf the **MANA COUNTER** on the board cannot be increased at the end of the turn, the game is a draw."
+	},
+	{
+		"rule_name": "turn phases",
+		"rule_text": "1. **HEROES PHASE**\nPlayers take turns activating one hero each.\n\n2. **MINIONS PHASE**\nPlayers determine who is controlling each Lane and Dome."
+	},
+	{
+		"rule_name": "hero cards",
+		"rule_text": "Each hero has a corresponding card with this structure:\n**1. SKILLS.** Each hero has a number of unique skills, often used through the Worship action.\n**2. RANGE OF ATTACK AND SKIRMISH ACTION.**\nThis can be of two types:\n > **RANGED:** within 3 hexes.\n > **MELEE:** adjacent (within 1 hex).\n**3. ATTACK VALUE.**This is how strong their Attack action is.\n**4. HEALTH POINTS.** These are the starting and maximum amount of health points (HP). These are tracked on the board with the respective hero token.\n**5. ARMOR.** This reduces all damage taken by one per point of Armor (please note that Armor protects from any source of damage: power cards, attacks, skills, etc).\n**6. MANA RUNES.** A hero may play power cards which have runes matching those on the hero card. The rune to the right also determines the hero faction.\n**7. CLASS. **The only class with an associated rule is mage. Mages have piercing, meaning they ignore enemy Armor with any effect they generate.\n\n**OFTEN OVERLOOKED**\nMages ignore enemy Armor not just with Attack actions, but also Skirmish actions, power cards, skills, and any other effect they generate.\n\nThe back of the hero cards is for the simplified mode (see page 23)."
+	},
+	{
+		"rule_name": "hero states",
+		"rule_text": "Heroes can be in three different states: Ready, Exhausted, or Defeated.\n\n**READY.** Heroes start the game in this state. Only Ready heroes can be activated during the Heroes Phase.\n**EXHAUSTED.** Heroes become Exhausted after their Activation. Exhausted heroes cannot be activated during the current Heroes Phase (please note: they can still play reaction Power cards). Their hero cards are rotated 90 degrees clockwise to mark this state. They will become Ready at the end of the Minions Phase.\n**DEFEATED. **When a hero is reduced to 0 or fewer HP, they are Defeated:\n\n > The player who Defeated them draws two power cards.\n > Place the Defeated hero’s miniature on their hero card.\n > Place the Defeated hero token on the mana tracker  rea of:\n**THE NEXT TURN:** if the hero was Ready.\n**THE TURN AFTER THE NEXT ONE:** if the hero was Exhausted.\n\nDefeated heroes will return once the Skytear token reaches their hero token. When this happens, place the returning hero’s miniature as close as possible to the friendly Nexus and set their state to Ready (the first player place all their re-spawning heroes first)"
+	},
+	{
+		"rule_name": "unit types",
+		"rule_text": "MAGE, WARRIOR, MARKSMAN, SUPPORT, SPECIALIST, TANK, and ASSASSIN"
+	},
+]}
