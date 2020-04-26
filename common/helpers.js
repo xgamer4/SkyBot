@@ -52,3 +52,24 @@ exports.sendEmbed_CardFAQ = function(message, FAQs, cardId) {
         message.channel.send({ embed });
     }
 }
+
+exports.sendEmbed_RuleFAQ = function(message, FAQs, faq_ids) {
+    if (faq_ids) {
+        const embed = new Discord.RichEmbed()
+            .setTitle('FAQ')
+    
+        faq_ids.forEach(id => {
+            console.log("ENTRY:")
+            console.log(FAQs[id])
+            if (FAQs[id]) {
+
+                const question = FAQs[id].title.replace(/<p>/g, "").replace(/<\/p>/g, "");
+                const answer = FAQs[id].body.replace(/<p>/g, "").replace(/<\/p>/g, "");
+                embed.addField(question, answer, false);
+            }
+
+        });
+        message.channel.send({ embed })
+    }
+
+}
