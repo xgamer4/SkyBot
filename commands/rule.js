@@ -42,4 +42,5 @@ exports.run = (client, message, args) => {
     .setFooter("SkyBot")
 
   message.channel.send({ embed });
+  Helpers.sendEmbed_RuleFAQ(message, client.faqByID, result.faq_ids)
 }
