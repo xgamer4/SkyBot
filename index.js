@@ -68,6 +68,7 @@ const loadFAQ = async () => {
   let indexByPowerCards = {};
   let indexByVictoryCards = {};
   let indexByOutsiders = {};
+  let indexByID = {};
 
   data.forEach(qa => {
     if (qa.relatedHeroes)
@@ -113,12 +114,17 @@ const loadFAQ = async () => {
         indexByOutsiders[p].push(qa);
       });
     }
+  
+    indexByID[qa.id] = qa
+ 
+    
   });
 
   client.faqByHeroes = indexByHeroes;
   client.faqByPowerCards = indexByPowerCards;
   client.faqByVictoryCards = indexByVictoryCards;
   client.faqByOutsiders = indexByOutsiders;
+  client.faqByID = indexByID;
 }
 
 const loadVictoryCards = async () => {

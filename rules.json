@@ -1,6 +1,10 @@
 {
     "data": [
-
+        {	
+            "rule_name": "armor",
+            "rule_text":"**ARMOR:** This reduces all damage taken by one per point of Armor (please note that Armor protects from any source of damage: power cards, attacks, skills, etc).",
+            "faq_ids": ["8939"]
+        },
         {
             "rule_name": "conditions",
             "rule_text": "When a hero gains a condition, place the condition token on their hero card and apply the effects below. If a condition would be applied on a hero that already has it, the condition is not applied.\n\n**SLOW.** The hero’s Move action’s total movement value is reduced by 2 hexes.\n**FAST. **The hero’s Move action’s total movement value is increased by 2 hexes.\n**FRENZY.** The hero can declare the Attack action twice during their activation (using 1 AP for each Attack action).\n**DISARM.** The hero’s Attack and Skirmish actions deal half of the damage rounded up (before applying armor).\n**MARKED.** Kurumo heroes have skills that benefit from Marked enemy heroes.\n**SHAPESHIFTED.** Liothan heroes activate the skills with the Shapeshifted icon when they have this condition.\n\n**OFTEN OVERLOOKED**\nIf a hero gains a condition when they are already Exhausted, they will keep it until the next time they become Exhausted again."
@@ -11,15 +15,18 @@
         },
         {
             "rule_name": "outsiders",
-            "rule_text": "Outsiders are elementals that cannot be damaged and dwell in Domes made of Skytear energy. During the Minions Phase, a player taking control of a Dome may immediately spawn and activate the outsider related to that Dome."
+            "rule_text": "Outsiders are elementals that cannot be damaged and dwell in Domes made of Skytear energy. During the Minions Phase, a player taking control of a Dome may immediately spawn and activate the outsider related to that Dome.",
+            "faq_ids": ["8200", "8186"]
         },
         {
             "rule_name": "towers and nexuses",
-            "rule_text": "Towers defend your Nexus from enemy minions and heroes. \nThe Health Points (HP) of Towers and Nexuses are represented by a stack of tower tokens. Each tower token is worth one or two HP depending on the number of towers on it.\n\n**OFTEN OVERLOOKED**\nHeroes cannot attack Towers and Nexuses directly. The only way to damage them is to win the lead of control tokens during the Minions Phase."
+            "rule_text": "Towers defend your Nexus from enemy minions and heroes. \nThe Health Points (HP) of Towers and Nexuses are represented by a stack of tower tokens. Each tower token is worth one or two HP depending on the number of towers on it.\n\n**OFTEN OVERLOOKED**\nHeroes cannot attack Towers and Nexuses directly. The only way to damage them is to win the lead of control tokens during the Minions Phase.",
+            "faq_ids": ["8919", "8157"]
         },
         {
             "rule_name": "line of sight(LoS)",
-            "rule_text": "A hero, minion, or outsider has Line of Sight (LoS) to a target if there is a path to the target of up to three consecutive hexes that does not cross any white lines.\n\n**OFTEN OVERLOOKED**\nHeroes can always draw LoS to themselves.\nHeroes can see through other heroes, minions, and outsiders.\n\n**Cover Hexes**\nCertain hexes of the battlefield (usually bushes and ruins) have the cover icon and are called Cover Hexes.\nA friendly hero has LoS toward an enemy in a Cover Hex only while there is a friendly hero adjacent and with LoS to the same Cover Hex.\n\n**OFTEN OVERLOOKED**\nHeroes can see a Cover Hex even when they cannot see the target inside the Cover Hex (e.g. if they are using a power card targeting hexes instead of heroes)\nHeroes can see through Cover Hexes, as only white lines block LoS."
+            "rule_text": "A hero, minion, or outsider has Line of Sight (LoS) to a target if there is a path to the target of up to three consecutive hexes that does not cross any white lines.\n\n**OFTEN OVERLOOKED**\nHeroes can always draw LoS to themselves.\nHeroes can see through other heroes, minions, and outsiders.\n\n**Cover Hexes**\nCertain hexes of the battlefield (usually bushes and ruins) have the cover icon and are called Cover Hexes.\nA friendly hero has LoS toward an enemy in a Cover Hex only while there is a friendly hero adjacent and with LoS to the same Cover Hex.\n\n**OFTEN OVERLOOKED**\nHeroes can see a Cover Hex even when they cannot see the target inside the Cover Hex (e.g. if they are using a power card targeting hexes instead of heroes)\nHeroes can see through Cover Hexes, as only white lines block LoS.",
+            "faq_ids": ["8113"]
         },
         {
             "rule_name": "target",
@@ -43,7 +50,8 @@
         },
         {
             "rule_name": "ADJACENT",
-            "rule_text": "Within 1 hex (therefore including the caster’s current hex)."
+            "rule_text": "Within 1 hex (therefore including the caster’s current hex).",
+            "faq_ids": ["7807"]
         },
         {
             "rule_name": "CASTER",
@@ -75,11 +83,13 @@
         },
         {
             "rule_name": "PREDICT X",
-            "rule_text": "Look at the top X cards of your deck and place any number of them on your discard pile or back on top of the deck, in any order."
+            "rule_text": "Look at the top X cards of your deck and place any number of them on your discard pile or back on top of the deck, in any order.",
+            "faq_ids": ["7869"]
         },
         {
             "rule_name": "SPAWN X MINIONS",
-            "rule_text": "The caster must have LoS toward a control token. They may place X minions as close as possible to that control token."
+            "rule_text": "The caster must have LoS toward a control token. They may place X minions as close as possible to that control token.",
+            "faq_ids": ["8863"]
         },
         {
             "rule_name": "TAKE AN ACTION",
@@ -87,15 +97,19 @@
         },
         {
             "rule_name": "area of effect(AoE)",
-            "rule_text": "Some effects’ descriptions have a diagram of hexes hit by the effect.\nWhen these effects are resolved, the AoE diagram is placed and it can be flipped and rotated as long as one hex of the diagram matches one hex on the battlefield.\nIf there is a highlighted hex, it indicates the position of the Caster; otherwise, at least one hex of the AoE must be within range.\nIf the effect requires any card to be flipped, they are flipped once for all targets hit.\n\n**OFTEN OVERLOOKED**\nYou place the diagram only when you resolve the effect, not when you generate it.\nIf the effect requires to target a hex and the Caster is pushed out of range or LoS from the target hex, the effect will not resolve."
+            "rule_text": "Some effects’ descriptions have a diagram of hexes hit by the effect.\nWhen these effects are resolved, the AoE diagram is placed and it can be flipped and rotated as long as one hex of the diagram matches one hex on the battlefield.\nIf there is a highlighted hex, it indicates the position of the Caster; otherwise, at least one hex of the AoE must be within range.\nIf the effect requires any card to be flipped, they are flipped once for all targets hit.\n\n**OFTEN OVERLOOKED**\nYou place the diagram only when you resolve the effect, not when you generate it.\nIf the effect requires to target a hex and the Caster is pushed out of range or LoS from the target hex, the effect will not resolve.",
+            "faq_ids": ["7804"]
         },
         {
             "rule_name": "movement effects",
-            "rule_text": "Any effect which moves a hero or a minion is considered a movement effect and follows the same rules as the Move action.\nThe most common movement effects keywords are: MOVE, PLACE, and PUSH.\n\n**MOVE X:** Move the target up to X hexes.\n**PLACE:** Place the target in the chosen hex.\n**PUSH X HEXES:** Move the target X hexes away from the Caster, one by one. Each hex they are pushed into must be farther away from the Caster and free from miniatures. Stop the push if the target cannot get farther away at any point.\n\n**OFTEN OVERLOOKED**\nYou cannot decide to push fewer hexes than the ones indicated."
+            "rule_text": "Any effect which moves a hero or a minion is considered a movement effect and follows the same rules as the Move action.\nThe most common movement effects keywords are: MOVE, PLACE, and PUSH.\n\n**MOVE X:** Move the target up to X hexes.\n**PLACE:** Place the target in the chosen hex.\n**PUSH X HEXES:** Move the target X hexes away from the Caster, one by one. Each hex they are pushed into must be farther away from the Caster and free from miniatures. Stop the push if the target cannot get farther away at any point.\n\n**OFTEN OVERLOOKED**\nYou cannot decide to push fewer hexes than the ones indicated.",
+            "faq_ids": ["7875", "8192"]
         },
         {
             "rule_name": "power cards",
-            "rule_text": "**POWER CARDS** cost one mana for each rune in the top left corner.\nThe mana (and turn) counter on the board indicates the amount of mana in each hero’s mana pool at the start of the turn. Heroes may play a power card if:\n\n > They have enough mana in their mana pool.\n > They have the rune colors of the power card on their own hero card.\n > They are on the battlefield (i.e. they are not Defeated).\n\nWhen a hero plays a power card:\n\n > Generate its effect.\n > Place the power card on top of that hero card.\n\nMana equal to the cost of the cards on top of the hero card is currently spent.\n\n**OFTEN OVERLOOKED**\nPlaying a power card does NOT require any Action Points.\nExhausted heroes CAN play power cards.\nEach hero has their own individual mana pool.\nIf a power card is removed from the top of a hero card, that hero regenerates mana equal to the mana cost of the cards.\n\n<See *Types and Timing*, *Drawing Power Cards*, *Ultimates*, and *Skytear Flux*>"
+            "rule_text": "**POWER CARDS** cost one mana for each rune in the top left corner.\nThe mana (and turn) counter on the board indicates the amount of mana in each hero’s mana pool at the start of the turn. Heroes may play a power card if:\n\n > They have enough mana in their mana pool.\n > They have the rune colors of the power card on their own hero card.\n > They are on the battlefield (i.e. they are not Defeated).\n\nWhen a hero plays a power card:\n\n > Generate its effect.\n > Place the power card on top of that hero card.\n\nMana equal to the cost of the cards on top of the hero card is currently spent.\n\n**OFTEN OVERLOOKED**\nPlaying a power card does NOT require any Action Points.\nExhausted heroes CAN play power cards.\nEach hero has their own individual mana pool.\nIf a power card is removed from the top of a hero card, that hero regenerates mana equal to the mana cost of the cards.\n\n<See *Types and Timing*, *Drawing Power Cards*, *Ultimates*, and *Skytear Flux*>",
+            "faq_ids": ["8224", "4746"]
+
         },
         {
             "rule_name": "types and timing",
@@ -103,7 +117,8 @@
         },
         {
             "rule_name": "drawing power cards",
-            "rule_text": "These are all the moments when players draw Power cards:\n\n > Beginning of the game: draw 5 cards (6 if first player).\n > End of the Minions Phase: draw 2 cards.\n > Defeat an enemy hero: draw 2 cards.\n > Damage an enemy Tower or Nexus (no matter the amount of damage dealt): draw 1 card.\n\nWhen your deck runs out of power cards to draw, shuffle your discard pile and create a new deck.\nThe maximum hand size at the end of the turn is six power cards\n\n<See *End of Turn*>"
+            "rule_text": "These are all the moments when players draw Power cards:\n\n > Beginning of the game: draw 5 cards (6 if first player).\n > End of the Minions Phase: draw 2 cards.\n > Defeat an enemy hero: draw 2 cards.\n > Damage an enemy Tower or Nexus (no matter the amount of damage dealt): draw 1 card.\n\nWhen your deck runs out of power cards to draw, shuffle your discard pile and create a new deck.\nThe maximum hand size at the end of the turn is six power cards\n\n<See *End of Turn*>",
+            "faq_ids": ["9161"]
         },
         {
             "rule_name": "ultimates",
@@ -131,7 +146,8 @@
         },
         {
             "rule_name": "attack action",
-            "rule_text": "When a friendly hero declares an Attack action, you must choose a target in LoS and range. When resolving the Attack, determine the damage dealt as follows:\n\n1. Check the attack value of the attacking hero.\n2. Flip a power card for each [+] icon next to the attack value. Flip these cards face up from the top of your deck into your discard pile.\n3. Choose one of these flipped power cards and add its modifier to the hero’s attack value. This is the damage dealt.\n4. Subtract the target’s Armor value from the damage dealt.\n5. The resulting number is the amount of HP that the target loses (if the number is negative, nothing happens).\n\n**OFTEN OVERLOOKED**\nIf the target is not in range and LoS when it is time to resolve the Attack, the hero  still spends 1 AP even though the Attack action has no effect."
+            "rule_text": "When a friendly hero declares an Attack action, you must choose a target in LoS and range. When resolving the Attack, determine the damage dealt as follows:\n\n1. Check the attack value of the attacking hero.\n2. Flip a power card for each [+] icon next to the attack value. Flip these cards face up from the top of your deck into your discard pile.\n3. Choose one of these flipped power cards and add its modifier to the hero’s attack value. This is the damage dealt.\n4. Subtract the target’s Armor value from the damage dealt.\n5. The resulting number is the amount of HP that the target loses (if the number is negative, nothing happens).\n\n**OFTEN OVERLOOKED**\nIf the target is not in range and LoS when it is time to resolve the Attack, the hero  still spends 1 AP even though the Attack action has no effect.",
+            "faq_ids": ["7882"]
         },
         {
             "rule_name": "skirmish action",
@@ -147,7 +163,8 @@
         },
         {
             "rule_name": "liothan shapeshifters",
-            "rule_text": "Liothan heroes transform into wild animals at will to gain extraordinary powers.\nWhen a Liothan hero resolves a Worship action:\n\n> Apply the Shapeshifted condition to a friendly Liothan hero within 3 hexes.\n\nWhen a Liothan hero resolves the Worship action on them self, you may Exhaust them before applying the Shapeshifted condition (since conditions are removed when heroes Exhaust, this is a way for Liothan heroes to start their next Activation with the Shapeshifted condition).\n\nWhile a Liothan hero has the Shapeshifted condition, the hero’s skill with the Shapeshifted icon next to it is active.\n\n**OFTEN OVERLOOKED**\nLoS is NOT required to apply the Shapeshifted condition."
+            "rule_text": "Liothan heroes transform into wild animals at will to gain extraordinary powers.\nWhen a Liothan hero resolves a Worship action:\n\n> Apply the Shapeshifted condition to a friendly Liothan hero within 3 hexes.\n\nWhen a Liothan hero resolves the Worship action on them self, you may Exhaust them before applying the Shapeshifted condition (since conditions are removed when heroes Exhaust, this is a way for Liothan heroes to start their next Activation with the Shapeshifted condition).\n\nWhile a Liothan hero has the Shapeshifted condition, the hero’s skill with the Shapeshifted icon next to it is active.\n\n**OFTEN OVERLOOKED**\nLoS is NOT required to apply the Shapeshifted condition.",
+            "faq_ids": ["7759"]
         },
         {
             "rule_name": "taulot pillars",
@@ -159,7 +176,12 @@
         },
         {
             "rule_name": "resolving effects",
-            "rule_text": "Resolving an effect just means that its effect happens.\n\nUnless noted otherwise, effects last until the end of the current hero activation.\n\n<See *Effect Keywords*, *Area of Effect(AoE)*, and *Movement Effects*>"
+            "rule_text": "Resolving an effect just means that its effect happens.\n\nUnless noted otherwise, effects last until the end of the current hero activation.\n\n<See *Effect Keywords*, *Area of Effect(AoE)*, and *Movement Effects*>",
+            "faq_ids": ["8975", "5342", "7810"]
+        },
+        {
+            "rule_name": "mages",
+            "rule_text": "Mages ignore enemy Armor not just with Attack actions, but also Skirmish actions, power cards, skills, and any other effect they generate.\n\nThe back of the hero cards is for the simplified mode (see page 23)."
         }
     ]
 }
