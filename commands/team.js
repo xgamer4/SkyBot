@@ -5,8 +5,8 @@ exports.run = (client, message, args) => {
     console.log(roleToFind)
     let role = message.guild.roles.find(r => r.name === roleToFind.toLowerCase());
     if (role) {
-        console.log(role)
-        console.log(role.name)
+        //console.log(role)
+        //console.log(role.name)
         if (["nupten", "liothan", "taulot", "kurumo"].includes(role.name)) {
             // Get array of member's roles except TEAM roles.
             roles = message.member.roles.filter(r => !(["nupten", "liothan", "taulot", "kurumo"].includes(r.name))).array()
