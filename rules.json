@@ -1,12 +1,16 @@
 {
     "data": [
+        {
+            "rule_name": "mages",
+            "rule_text": "Mages ignore enemy Armor not just with Attack actions, but also Skirmish actions, power cards, skills, and any other effect they generate.\n\nThe back of the hero cards is for the simplified mode (see page 23)."
+        },
         {	
             "rule_name": "armor",
             "rule_text":"**ARMOR:** This reduces all damage taken by one per point of Armor (please note that Armor protects from any source of damage: power cards, attacks, skills, etc).",
             "faq_ids": ["8939"]
         },
         {
-            "rule_name": "conditions",
+            "rule_name": "conditions (slow, fast, frenzy, disarm, marked, shapeshifted)",
             "rule_text": "When a hero gains a condition, place the condition token on their hero card and apply the effects below. If a condition would be applied on a hero that already has it, the condition is not applied.\n\n**SLOW.** The hero’s Move action’s total movement value is reduced by 2 hexes.\n**FAST. **The hero’s Move action’s total movement value is increased by 2 hexes.\n**FRENZY.** The hero can declare the Attack action twice during their activation (using 1 AP for each Attack action).\n**DISARM.** The hero’s Attack and Skirmish actions deal half of the damage rounded up (before applying armor).\n**MARKED.** Kurumo heroes have skills that benefit from Marked enemy heroes.\n**SHAPESHIFTED.** Liothan heroes activate the skills with the Shapeshifted icon when they have this condition.\n\n**OFTEN OVERLOOKED**\nIf a hero gains a condition when they are already Exhausted, they will keep it until the next time they become Exhausted again."
         },
         {
@@ -178,10 +182,6 @@
             "rule_name": "resolving effects",
             "rule_text": "Resolving an effect just means that its effect happens.\n\nUnless noted otherwise, effects last until the end of the current hero activation.\n\n<See *Effect Keywords*, *Area of Effect(AoE)*, and *Movement Effects*>",
             "faq_ids": ["8975", "5342", "7810"]
-        },
-        {
-            "rule_name": "mages",
-            "rule_text": "Mages ignore enemy Armor not just with Attack actions, but also Skirmish actions, power cards, skills, and any other effect they generate.\n\nThe back of the hero cards is for the simplified mode (see page 23)."
         }
     ]
 }
