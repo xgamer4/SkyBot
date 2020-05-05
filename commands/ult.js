@@ -4,7 +4,7 @@ const Helpers = require("../common/helpers.js");
 exports.run = (client, message, args) => {
     // Extract the search string
     let stringToFind = args.join(" ");
-
+    console.log(client.ultimates)
     // Search the hero in the array
     var result = client.heroes.find(item => {
         return item.title.toLowerCase().includes(stringToFind.toLowerCase());
@@ -34,4 +34,9 @@ exports.run = (client, message, args) => {
     // Show Image and FAQ
     Helpers.sendEmbed_CardImage(message, result.frontImage.low)
         .then(Helpers.sendEmbed_CardFAQ(message, client.faqByPowerCards, result.id));
+}
+
+exports.config = {
+    name: "ult",
+    aliases: ["u", "ultimate", "ultimates"]
 }

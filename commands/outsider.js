@@ -37,3 +37,8 @@ exports.run = (client, message, args) => {
     Helpers.sendEmbed_CardImage(message, result.frontImage.low)
         .then(Helpers.sendEmbed_CardFAQ(message, client.faqByOutsiders, result.id));
 }
+
+exports.config = {
+    name: "outsider",
+    aliases: ["o", "out", "outsiders"]
+}

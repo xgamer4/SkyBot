@@ -20,7 +20,14 @@ exports.run = (client, message, args) => {
 
     .addField("**!rule <rule name>**", "Shows the Rule text.\nWithout params shows the Rule list.")
 
+    .addField("**!team <team name>**", "Gives you that teams role/color.")
+
     .setFooter("SkyBot")
 
   message.channel.send({ embed });
+}
+
+exports.config = {
+  name: "help",
+  aliases: ["h"]
 }
