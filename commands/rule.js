@@ -44,3 +44,8 @@ exports.run = (client, message, args) => {
   message.channel.send({ embed });
   Helpers.sendEmbed_RuleFAQ(message, client.faqByID, result.faq_ids)
 }
+
+exports.config = {
+    name: "rule",
+    aliases: ["r", "rules"]
+}

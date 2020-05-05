@@ -24,6 +24,11 @@ exports.run = (client, message, args) => {
     return message.channel.send(`Please select a **Team**. Example *"!team nupten"*`);
 }
 
+exports.config = {
+    name: "team",
+    aliases: ["t"]
+}
+
 
 
 

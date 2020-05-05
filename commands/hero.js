@@ -19,3 +19,8 @@ exports.run = (client, message, args) => {
     Helpers.sendEmbed_CardImage(message, result.heroCard.frontImage.low)
         .then(Helpers.sendEmbed_CardFAQ(message, client.faqByHeroes, result.id));
 }
+
+exports.config = {
+    name: "hero",
+    aliases: ["h", "heroes"]
+}
