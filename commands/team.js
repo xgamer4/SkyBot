@@ -9,7 +9,13 @@ exports.run = (client, message, args) => {
         //console.log(role.name)
         if (["nupten", "liothan", "taulot", "kurumo"].includes(role.name.toLowerCase())) {
             // Get array of member's roles except TEAM roles.
-            roles = message.member.roles.filter(r => !(["nupten", "liothan", "taulot", "kurumo"].includes(r.name.toLowerCase()))).array()
+            if (message.member.roles) {
+                roles = message.member.roles.filter(r => !(["nupten", "liothan", "taulot", "kurumo"].includes(r.name.toLowerCase()))).array()
+            }
+            else {
+                roles = []
+            }
+            
             // Add desired TEAM to array
             roles.push(role)
             // Apply array of roles to member
