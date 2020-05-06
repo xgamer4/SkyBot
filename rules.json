@@ -1,6 +1,10 @@
 {
     "data": [
         {
+            "rule_name": "setup",
+            "rule_text": "*Setup for 2-player game:*\n\n1) Flip three victory cards.\n\n2) Determine the first player.\n\n3) Set the mana counter to one.\n\n4) Draft heroes.\n\n5) Form decks of power cards.\n\n6) Draw power cards and mulligan.\n\n7) Build Towers.\n\n8) Place control tokens.\n\n9) Rally the minions.\n\n10) Summon the outsider."
+        },
+        {
             "rule_name": "mages",
             "rule_text": "Mages ignore enemy Armor not just with Attack actions, but also Skirmish actions, power cards, skills, and any other effect they generate.\n\nThe back of the hero cards is for the simplified mode (see page 23)."
         },
