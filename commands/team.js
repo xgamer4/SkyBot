@@ -3,17 +3,17 @@ const Discord = require("discord.js");
 exports.run = (client, message, args) => {
     let roleToFind = args.join(" ");
     console.log(roleToFind)
-    let role = message.guild.roles.find(r => r.name === roleToFind.toLowerCase());
+    let role = message.guild.roles.find(r => r.name.toLowerCase() === roleToFind.toLowerCase());
     if (role) {
         //console.log(role)
         //console.log(role.name)
-        if (["nupten", "liothan", "taulot", "kurumo"].includes(role.name)) {
+        if (["nupten", "liothan", "taulot", "kurumo"].includes(role.name.toLowerCase())) {
             // Get array of member's roles except TEAM roles.
-            roles = message.member.roles.filter(r => !(["nupten", "liothan", "taulot", "kurumo"].includes(r.name))).array()
+            roles = message.member.roles.filter(r => !(["nupten", "liothan", "taulot", "kurumo"].includes(r.name.toLowerCase()))).array()
             // Add desired TEAM to array
             roles.push(role)
             // Apply array of roles to member
-            message.member.setRoles(roles).catch(console.error);
+            message.member.setRoles(roles);
             return message.channel.send(`Welcome to team **${args.join(' ')}**.`);
         }
         else {

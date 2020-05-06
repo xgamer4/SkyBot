@@ -22,6 +22,8 @@ exports.run = (client, message, args) => {
 
     .addField("**!team <team name>**", "Gives you that teams role/color.")
 
+    .addField("**!tts**", "Gives you deck spawner instructions.")
+
     .setFooter("SkyBot")
 
   message.channel.send({ embed });
@@ -29,5 +31,5 @@ exports.run = (client, message, args) => {
 
 exports.config = {
   name: "help",
-  aliases: ["h"]
+  aliases: []
 }
