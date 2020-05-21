@@ -13,11 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Decrypt large secret
-      run: ./.github/scripts/decrypt_secret.sh
-      env:
-        GPG_Key: ${{ secrets.GPG_Key }}
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag skybot:$(date +%s)
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag skybot:$(date +%s)
