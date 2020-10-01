@@ -41,12 +41,13 @@ exports.sendEmbed_CardFAQ = function(message, FAQs, cardId) {
     if (FAQs[cardId]) {
 
         const embed = new Discord.RichEmbed()
+            .setAuthor('--------------------------------------------------')
             .setTitle('FAQ')
 
         FAQs[cardId].forEach(qa => {
             const question = qa.title.replace(/<p>/g, "").replace(/<\/p>/g, "");
             const answer = qa.body.replace(/<p>/g, "").replace(/<\/p>/g, "");
-            embed.addField(question, answer, false);
+            embed.addField(question, answer, true);
         });
 
         message.channel.send({ embed });
@@ -56,6 +57,7 @@ exports.sendEmbed_CardFAQ = function(message, FAQs, cardId) {
 exports.sendEmbed_RuleFAQ = function(message, FAQs, faq_ids) {
     if (faq_ids) {
         const embed = new Discord.RichEmbed()
+            .setAuthor('--------------------------------------------------')
             .setTitle('FAQ')
     
         faq_ids.forEach(id => {
@@ -65,7 +67,7 @@ exports.sendEmbed_RuleFAQ = function(message, FAQs, faq_ids) {
 
                 const question = FAQs[id].title.replace(/<p>/g, "").replace(/<\/p>/g, "");
                 const answer = FAQs[id].body.replace(/<p>/g, "").replace(/<\/p>/g, "");
-                embed.addField(question, answer, false);
+                embed.addField(question, answer, true);
             }
 
         });
