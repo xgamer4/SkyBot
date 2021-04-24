@@ -19,18 +19,18 @@ jobs:
           registry: docker.pkg.github.com
           repository: xgamer4/skybot/skybot
           tag_with_ref: true
-      - name: Copy production config
-        uses: frdrwrt/write-to-file@v1.3
-        with:
-          filepath: config.js
-          content: ${{ secrets.PROD_CONFIG }}
-          mode: 0655
-      - name: Push to ECR for hosting
-        uses: mr-smithers-excellent/docker-build-push@v5
-        with:
-          image: skybot
-          registry: 293682085668.dkr.ecr.us-west-2.amazonaws.com
-          tags: latest
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
+#      - name: Copy production config
+#        uses: frdrwrt/write-to-file@v1.3
+#        with:
+#          filepath: config.js
+#          content: ${{ secrets.PROD_CONFIG }}
+#          mode: 0655
+#      - name: Push to ECR for hosting
+#        uses: mr-smithers-excellent/docker-build-push@v5
+#        with:
+#          image: skybot
+#          registry: 293682085668.dkr.ecr.us-west-2.amazonaws.com
+#          tags: latest
+#        env:
+#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS }}
+#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
