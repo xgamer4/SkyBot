@@ -3,8 +3,6 @@ name: Docker Image CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   push_to_registry:
@@ -14,10 +12,23 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v2
       - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: xgamer4/skybot/skybot
+          registry: ghcr.io
+          repository: xgamer4/skybot
           tag_with_ref: true
+      - name: Copy production config
+        uses: actions/write-to-file@v1.0
+        with:
+          filepath: /app/config.js
+          content: ${{ secrets.PROD_CONFIG }}
+      - name: Push to ECR for hosting
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: skybot
+          registry: 293682085668.dkr.ecr.us-west-2.amazonaws.com/skybot
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
