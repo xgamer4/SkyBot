@@ -14,10 +14,10 @@ jobs:
       - name: Push to GitHub Packages
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: skybot
-          registry: ghcr.io
+          registry: docker.pkg.github.com
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+          image: xgamer4/skybot
       - name: Copy production config
         uses: frdrwrt/write-to-file@v1.3
         with:
