@@ -17,7 +17,8 @@ jobs:
           registry: docker.pkg.github.com
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          image: skybot
+          image: docker.pkg.github.com/xgamer4/skybot/skybot
+          tags: latest
       - name: Copy production config
         uses: frdrwrt/write-to-file@v1.3
         with:
