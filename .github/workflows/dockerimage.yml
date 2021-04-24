@@ -22,7 +22,7 @@ jobs:
       - name: Copy production config
         uses: frdrwrt/write-to-file@v1.3
         with:
-          filepath: /app/config.js
+          filepath: config.js
           content: ${{ secrets.PROD_CONFIG }}
           mode: 0655
       - name: Push to ECR for hosting
