@@ -20,10 +20,11 @@ jobs:
           repository: xgamer4/skybot
           tag_with_ref: true
       - name: Copy production config
-        uses: actions/write-to-file@v1.0
+        uses: frdrwrt/write-to-file@v1.3
         with:
           filepath: /app/config.js
           content: ${{ secrets.PROD_CONFIG }}
+          mode: 0655
       - name: Push to ECR for hosting
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
